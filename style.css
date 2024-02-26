@@ -1,0 +1,105 @@
+
+/*Janela do jogo*/
+.game {
+    /*position: relative é posicionado em relação à sua posição original*/
+
+    position: relative;
+    width: 600px;
+    height: 200px;
+    border: 1px solid black;
+    margin: auto;
+    overflow: hidden;
+}
+
+/*chão*/
+#chao {
+    /*absolute é posicionado em relação ao seu contêiner pai*/
+
+    position: absolute;
+    bottom: 0;
+
+    width: 100%;
+    height: 20px;
+
+    background-image: url('img/ground.png');
+    z-index: 1;
+}
+
+/* Cacto */
+#cacto {
+    position: absolute;
+    bottom: 5px;
+    left: 95%;
+
+    width: 25px; 
+    height: 50px; 
+ 
+    background-image: url(img/cactus/cactus1.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 2;
+
+} 
+
+/*Dino*/
+#dino {
+    position: absolute;
+    bottom: 0;
+    left: 20px; 
+
+    width: 50px;
+    height: 50px;
+
+    background-image: url('img/dino/normal.png');
+    background-size: 50px 50px;
+    z-index: 3;
+}
+
+/* Classe pulo */
+.pulo {
+    position: relative;
+
+    /*Criação de uma animação suave  e sua duração*/
+    animation: pulo 0.5s ease-in-out;
+}
+
+
+/*Eventos em cada tempo da animação*/
+@keyframes pulo {
+
+    /*No começo e no fim, dino deve estar no chão*/
+    0%,
+    100% {
+        transform: translateY(0); 
+    }
+
+    /*Meio da animação deve atingir o ponto mais alto*/
+    50% {
+        transform: translateY(-110px);
+    }
+}   
+
+#nuvem {
+    position: absolute;
+    top: 30%;
+    left: 95%;
+
+    width: 90px;
+    height: 22px;
+    background-image: url(img/cloud.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#gameover {
+    position:absolute;
+    top: 50%;
+    left: 30%;
+    visibility: hidden;
+    
+    width: 250px;
+    height: 20px;
+    background-image: url(img/gameover.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
